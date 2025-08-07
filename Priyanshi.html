@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Pryanshi!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: pop 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .cake {
+            font-size: 5em;
+            margin: 30px 0;
+            animation: float 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .message,
+        .wishes-box {
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .cute-img {
+            width: 150px;
+            margin: 10px;
+            animation: floatImg 3s ease-in-out infinite;
+        }
+
+        @keyframes floatImg {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background-color: pink;
+            border-radius: 50%;
+            animation: rise 8s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+
+            100% {
+                bottom: 110%;
+                transform: translateX(50px);
+            }
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #fff;
+        }
+
+        .b1 {
+            left: 10%;
+            background: #ffd1dc;
+            animation-delay: 0s;
+        }
+
+        .b2 {
+            left: 30%;
+            background: #fcd5ce;
+            animation-delay: 2s;
+        }
+
+        .b3 {
+            left: 50%;
+            background: #cdb4db;
+            animation-delay: 4s;
+        }
+
+        .b4 {
+            left: 70%;
+            background: #a2d2ff;
+            animation-delay: 1s;
+        }
+
+        .b5 {
+            left: 90%;
+            background: #ffafcc;
+            animation-delay: 3s;
+        }
+
+        /* Countdown */
+        #countdown {
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+            border: 3px solid #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Wishes */
+        .wishes-box textarea {
+            width: 90%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-family: inherit;
+            margin-top: 10px;
+            resize: none;
+        }
+
+        .wishes-box button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #fff;
+            color: #ff69b4;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #wish-list {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        #wish-list p {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 8px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Balloons -->
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+
+    <div class="container">
+        <h1>🎉 Happy Birthday Pryanshi! 🎉</h1>
+        <h2>Wishing you smiles, cake, and lots of fun!</h2>
+        <div id="countdown"></div>
+        <div class="cake">🎂</div>
+
+        <!-- Cute Images -->
+        <div>
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="cute-img" alt="Cat" />
+            <img src="https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif" class="cute-img" alt="Bear" />
+        </div>
+
+        <!-- Birthday Message -->
+        <div class="message">
+            Dear Pryanshi,<br /><br />
+            You’re sweet, kind, and full of joy! I hope your birthday brings you endless happiness, delicious cake, and
+            fun surprises.
+
+            You are very special for me han mai time kabhi de nhi pati jada kabhi mai galtiyan bhi krdeti hu by mistakley ...yaar but agar mai kabhi hurt krdu nah dont sit alone and get sad ana mere pas ladna fyt karna hahahah ..we r Sisters and that is your hak .....i will give you all happiness for forever ....and i really love you alot just really alot no one can take ur place....you are not only my behn you are my best friend also joh muje kisi bhi basis pe judge nah karta ....and i promise i will always love you and har din aur jada pyar kr saku tumse yahi i will try beta  
+            
+            💖<br /><br />
+            Love you always! 🎈🎁
+        </div>
+
+<h2>📸 Some Beautiful Moments</h2>
+<div class="gallery">
+    <!-- Animated hug GIFs for Image 1 & 3 -->
+    <img src="download.jpg" alt="Sisters Hugging 1" />
+    <img src="https://placebear.com/200/200" alt="Gallery 2" />
+    <img src="images.jpg" alt="Sisters Hugging 2" />
+    <img src="https://placebear.com/201/200" alt="Gallery 4" />
+</div>
+        <!-- Wishes Input -->
+        <div class="wishes-box">
+            <h2>💌 Leave a Birthday Wish</h2>
+            <textarea id="wishInput" rows="3" placeholder="Type your message here..."></textarea><br />
+            <button onclick="addWish()">Send Wish</button>
+            <div id="wish-list"></div>
+        </div>
+
+        <div class="footer">
+            Made with ❤️ just for you, Pryanshi!
+        </div>
+    </div>
+
+    <!-- Music -->
+    <audio autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- JavaScript -->
+    <script>
+        // Countdown
+        const birthday = new Date("21 October, 2025 00:00:00").getTime(); // Set to her birthday!
+        const countdownEl = document.getElementById("countdown");
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = birthday - now;
+
+            if (distance < 0) {
+                countdownEl.innerHTML = "🎉 It's Pryanshi's Birthday Today!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownEl.innerHTML = `⏳ Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Wishes
+        function addWish() {
+            const input = document.getElementById('wishInput');
+            const wishList = document.getElementById('wish-list');
+
+            if (input.value.trim() !== "") {
+                const p = document.createElement('p');
+                p.textContent = input.value;
+                wishList.appendChild(p);
+                input.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
